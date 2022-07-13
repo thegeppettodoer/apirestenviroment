@@ -26,6 +26,19 @@ app.use(cors());
 // adding morgan to log HTTP requests
 app.use(morgan('combined'));
 
+
+var enviromentJson={
+  DEV:{
+    APIURL:"http:/www.aws.com/dev",
+  },
+  PROD:{
+    APIURL:"http:/www.aws.com/prov",
+  },
+};
+
+
+
+
 // defining an endpoint to return all ads
 app.get('/', (req, res) => {
   res.send(ads);
