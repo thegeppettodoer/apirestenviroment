@@ -29,10 +29,16 @@ app.use(morgan('combined'));
 
 var enviromentJson={
   DEV:{
-    APIURL:"http:/www.aws.com/dev",
+    ENVIROMENT:"DEV",
+    APIURL:"http://next-dev-rimac.s3-website-us-east-1.amazonaws.com/",
+  },
+  QA:{
+    ENVIROMENT:"QA",
+    APIURL:"http://next-qa-rimac.s3-website-us-east-1.amazonaws.com/",
   },
   PROD:{
-    APIURL:"http:/www.aws.com/prov",
+    ENVIROMENT:"PROD",
+    APIURL:"http://next-prod-rimac.s3-website-us-east-1.amazonaws.com/"
   },
 };
 
@@ -41,9 +47,38 @@ var enviromentJson={
 
 // defining an endpoint to return all ads
 app.get('/', (req, res) => {
-  res.send(enviromentJson);
+  console.log("---------------------------");
+
+
+  try {
+    var enviromentReq={
+      "http://next-dev-rimac.s3-website-us-east-1.amazonaws.com/":"DEV",
+      "http://next-qa-rimac.s3-website-us-east-1.amazonaws.com/":"QA",      
+      "http://next-prod-rimac.s3-website-us-east-1.amazonaws.com/":"PROD",
+
+      "http://next-dev-rimac.s3-website-us-east-1.amazonaws.com":"DEV",
+      "http://next-qa-rimac.s3-website-us-east-1.amazonaws.com":"QA",      
+      "http://next-prod-rimac.s3-website-us-east-1.amazonaws.com":"PROD",
+
+      "localhost":"DEV",
+
+    };
+    console.log("req:",req.headers);
+    console.log("req:",req.headers.enviroment);
+    console.log("req:",enviromentJson[enviromentReq[req.headers.enviroment]]);
+
+    if (enviromentJson[enviromentReq[req.headers.enviroment]] !==undefined){
+      res.send(enviromentJson[enviromentReq[req.headers.enviroment]] );
+    }else{
+      res.send({message:"Don't returned value of enviroment!"});
+
+    }
+  } catch (error) {
+    console.log('Catch error Get enviroment');
+  }
+
 });
- 
+
 // starting the server
 app.listen(3001, () => {
   console.log('Escuchando en puerto 3001');
