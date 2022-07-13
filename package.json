@@ -1,0 +1,22 @@
+{
+  "name": "apirestenviroment",
+  "version": "1.0.0",
+  "description": "devuelve variables de entorno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegeppettodoer/apirestenviroment.git"
+  },
+  "keywords": [
+    "apirest"
+  ],
+  "author": "david garcia balarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thegeppettodoer/apirestenviroment/issues"
+  },
+  "homepage": "https://github.com/thegeppettodoer/apirestenviroment#readme"
+}
