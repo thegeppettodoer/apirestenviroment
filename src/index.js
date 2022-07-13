@@ -30,15 +30,15 @@ app.use(morgan('combined'));
 var enviromentJson={
   DEV:{
     ENVIROMENT:"DEV",
-    APIURL:"http://next-dev-rimac.s3-website-us-east-1.amazonaws.com/",
+    APIURL:"http://devxxxxxxxnext-dev-rimac.s3-website-us-east-1.amazonaws.com/",
   },
   QA:{
     ENVIROMENT:"QA",
-    APIURL:"http://next-qa-rimac.s3-website-us-east-1.amazonaws.com/",
+    APIURL:"http://qaxxxxxxxnext-qa-rimac.s3-website-us-east-1.amazonaws.com/",
   },
   PROD:{
     ENVIROMENT:"PROD",
-    APIURL:"http://next-prod-rimac.s3-website-us-east-1.amazonaws.com/"
+    APIURL:"prodxxxxxxxxxxxxhttp://next-prod-rimac.s3-website-us-east-1.amazonaws.com/"
   },
 };
 
