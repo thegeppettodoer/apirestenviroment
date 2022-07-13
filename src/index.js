@@ -52,13 +52,9 @@ app.get('/', (req, res) => {
 
   try {
     var enviromentReq={
-      "http://next-dev-rimac.s3-website-us-east-1.amazonaws.com/":"DEV",
-      "http://next-qa-rimac.s3-website-us-east-1.amazonaws.com/":"QA",      
-      "http://next-prod-rimac.s3-website-us-east-1.amazonaws.com/":"PROD",
-
-      "http://next-dev-rimac.s3-website-us-east-1.amazonaws.com":"DEV",
-      "http://next-qa-rimac.s3-website-us-east-1.amazonaws.com":"QA",      
-      "http://next-prod-rimac.s3-website-us-east-1.amazonaws.com":"PROD",
+      "next-dev-rimac.s3-website-us-east-1.amazonaws.com":"DEV",
+      "next-qa-rimac.s3-website-us-east-1.amazonaws.com":"QA",      
+      "next-prod-rimac.s3-website-us-east-1.amazonaws.com":"PROD",
 
       "localhost":"DEV",
 
